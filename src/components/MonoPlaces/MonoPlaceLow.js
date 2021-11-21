@@ -1,11 +1,14 @@
 import React from 'react';
 import MonoPlace from "./MonoPlace";
+import {useSelector} from "react-redux";
 
 const MonoPlaceLowLeft = () => {
+
+
     return (
         <>
-            <MonoPlace className='go' />
-            <MonoPlace className={'lowHome'} inPosition={{player: 1}} />
+            <MonoPlace className='go' leftStyle={{right:'0vw'}}/>
+            <MonoPlace className={'lowHome'} leftStyle={{right:'7.95vw'}}/>
             <MonoPlace className={'lowHome'} leftStyle={{right:'12.85vw'}} />
             <MonoPlace className={'lowHome'} leftStyle={{right:'17.75vw'}} />
             <MonoPlace className={'lowHome'} leftStyle={{right:'22.65vw'}} />

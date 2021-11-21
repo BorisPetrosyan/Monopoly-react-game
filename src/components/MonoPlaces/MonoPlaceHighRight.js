@@ -4,7 +4,7 @@ import MonoPlace from "./MonoPlace";
 const MonoPlaceHighRight = ({className,leftStyle}) => {
     return (
         <>
-            <MonoPlace className={'highHomeR'} />
+            <MonoPlace className={'highHomeR'} leftStyle={{top:'41.3vw'}} />
             <MonoPlace className={'highHomeR'}  leftStyle={{top:'8.6vw'}}/>
             <MonoPlace className={'highHomeR'}  leftStyle={{top:'12.75vw'}}/>
             <MonoPlace className={'highHomeR'}  leftStyle={{top:'16.85vw'}}/>
