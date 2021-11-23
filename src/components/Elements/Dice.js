@@ -11,7 +11,6 @@ const Dice = () => {
     const  rollDoneCallback =(num) => {
         dispatch(allActionCreators.zarChange(num))
         dispatch(allActionCreators.checkWhoseTurn())
-        console.log(`You rolled a ${num}`)
     }
     return (
         <div style={{position:'absolute',top:'8vw',left:'5vw'}}>
@@ -20,7 +19,7 @@ const Dice = () => {
                     numDice={1}
                     rollDone={rollDoneCallback}
                     // disableIndividual={true}
-                    rollTime={1}
+                    rollTime={3}
                 />
             </div>
         </div>

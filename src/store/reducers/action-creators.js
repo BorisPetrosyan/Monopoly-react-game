@@ -1,9 +1,9 @@
-import {gamePlayersActionCreators} from "./gameRules/action-creators";
-import {gameRulesActionCreators} from "./gamePlayers/action-creators";
+import {gameRulesActionCreators} from "./gameRules/action-creators";
 import {gameBoardActionCreators} from "./gameBoard/action-creators";
+import {gamePlayersActionCreators} from "./gamePlayers/action-creators";
 
 export  const allActionCreators = {
     ...gameRulesActionCreators,
-    ...gamePlayersActionCreators,
     ...gameBoardActionCreators,
+    ...gamePlayersActionCreators
 }

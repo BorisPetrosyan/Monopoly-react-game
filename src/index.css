@@ -31,7 +31,7 @@ body {
     height: 4vw;
     width: 7.8vw;
     position: absolute;
-    background-color: green;
+    /*background-color: green;*/
 }
 .highHome {
     left: 7.95vw;
@@ -39,7 +39,7 @@ body {
     height: 6.48vw;
     width: 4.75vw;
     position: absolute;
-    background-color: green;
+    /*background-color: green;*/
 }
 .highHomeR {
     right: 0;
@@ -47,6 +47,6 @@ body {
     height: 4vw;
     width: 7.8vw;
     position: absolute;
-    background-color: red;
+    /*background-color: red;*/
 }
 

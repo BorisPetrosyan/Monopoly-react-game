@@ -1,21 +1,12 @@
 import React from 'react';
-import {PlayerOne} from "../Elements/PlayersIcons";
-import {useSelector} from "react-redux";
+import {PlayerOne, PlayerTwo} from "../Elements/PlayersIcons";
 
 const MonoPlace = ({className,leftStyle, inPosition}) => {
 
-
-    const {gamePlayersReducer} = useSelector(state => state)
-
-    const wherePlayerOne = () => {
-        let  x = gamePlayersReducer.players.playerOne.position
-    }
-
-
-
     return (
         <div className={className} style={leftStyle}>
-            {inPosition ? <PlayerOne player={inPosition.player}/> : null}
+            {inPosition.length && inPosition[0] === 1 ? <PlayerOne /> : null}
+            {inPosition.length && inPosition[1] === 2 ? <PlayerTwo /> : null}
         </div>
     );
 };
