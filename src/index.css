@@ -50,3 +50,17 @@ body {
     /*background-color: red;*/
 }
 
+.p1leftSide {
+    right: 5.8vw;
+    top: 2.5vw;
+    height:1.5vw;
+    width:1.5vw;
+    position:absolute;
+}
+.p2leftSide {
+    height: 2vw;
+    width: 2vw;
+    right: 2vw;
+    top: 1.8vw;
+    position: absolute;
+}

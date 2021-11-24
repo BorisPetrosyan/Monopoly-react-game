@@ -2,7 +2,7 @@
 
 const initialState = {
     gameBoard : [
-        {id: 0,name:'GO', positionIn: [1], styles:['go', {right:'0vw'}]},
+        {id: 0,name:'GO', positionIn: [], styles:['go', {right:'0vw'}]},
         {
             id: 1,
             name: 'MEDITERRANEAN AVE.',
@@ -13,7 +13,7 @@ const initialState = {
                 placeBuyPriceIs: null,
                 isHotel: false
             },
-            positionIn: [null,2],
+            positionIn: [],
             styles:[
                 'lowHome',
                 {right:'7.95vw'}
@@ -537,7 +537,7 @@ const initialState = {
                 placeBuyPriceIs: null,
                 isHotel: false
             },
-            positionIn: [],
+            positionIn: [1],
             styles:[
                 'highHomeR',
                 {top:'37.27vw'}
@@ -567,8 +567,8 @@ const initialState = {
 export const  gameBoardReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CHANGE_POSITION':
-            console.log(action.payload)
-            // return{ ...state, state: action.payload }
+            // console.log(action.payload)
+            return{ ...state, gameBoard: action.payload }
         default: return state
     }
 }

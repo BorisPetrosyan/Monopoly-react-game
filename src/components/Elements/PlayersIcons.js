@@ -1,26 +1,37 @@
 import React from 'react'
 
 
-export  const PlayerOne = () => {
+export  const PlayerOne = ({styles}) => {
     return(
         <div>
             <img
                 src={require(`../../assets/images/1.png`).default}
-                alt='player'
-                style={{height:'1.5vw', width:'1.5vw',right: '3vw',top: '4.5vw',position:'absolute'}}
+                alt='player1'
+                style={styles[0] === 'lowHomeL'  ? null : {height:'1.5vw', width:'1.5vw',right: styles[0] === 'highHomeR' ? '4.4vw' :  '3vw',top: styles[0] === 'highHome'?  '1.5vw':styles[0] === 'highHomeR' ? '0.5vw' :  '4.5vw',position:'absolute'}}
+                className={styles[0] === 'lowHomeL'  ? 'p1leftSide' : null}
             />
         </div>
     )
 }
 
-export  const PlayerTwo = () => {
+export  const PlayerTwo = ({styles}) => {
+
+
+
     return(
         <div>
             <img
                 src={require(`../../assets/images/2.png`).default}
-                alt='player'
-                style={{height:'2vw', width:'2vw',right: '0vw',top: '4.5vw',position:'absolute'}}
+                alt='player2'
+                style={styles[0] === 'lowHomeL'  ? null :{height:'2vw', width:'2vw',right: styles[0] === 'highHome' ? '0.5vw' : '0vw',top:styles[0] === 'highHome' ? '1.2vw' : styles[0] === 'highHomeR' ? '0.2vw' : '4.5vw',position:'absolute',transform:styles[0] === 'highHome' ? 'scaleX(-1)':'scaleX(1)'}}
+                className={styles[0] === 'lowHomeL'  ? 'p2leftSide' : null}
             />
         </div>
     )
 }
+
+
+// right: 0.5vw;
+// top: 1.2vw;
+// position: absolute;
+// transform: scaleX(-1)
