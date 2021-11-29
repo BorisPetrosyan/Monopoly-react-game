@@ -1,13 +1,14 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import MonoPlace from "./MonoPlaces/MonoPlace";
-import {useDispatch, useSelector} from "react-redux";
-import {gameRulesActionCreators} from "../store/reducers/gameRules/action-creators";
+import {useSelector} from "react-redux";
 
 const GameBoardContainer = ({className,styles}) => {
-    const dispatch =  useDispatch()
-    const gameBoard = useSelector(state => state)["gameBoardReducer"].gameBoard
 
-    const playerTurn = useSelector(state => state)["gamePlayersReducer"].playerTurn
+    // const dispatch =  useDispatch()
+    // const playerTurn = useSelector(state => state)["gamePlayersReducer"].playerTurn
+
+
+    const gameBoard = useSelector(state => state)["gameBoardReducer"].gameBoard
 
     return (
         <div>

@@ -1,4 +1,3 @@
-
 export const gameBoardActionCreators = {
     changePosition: (value)  => (
         {type: 'CHANGE_POSITION' ,payload: value}
@@ -6,41 +5,56 @@ export const gameBoardActionCreators = {
     setPosition: (value) => ( dispatch , state) => {
         const playerTurn = state().gamePlayersReducer.playerTurn
         const gameBoard = state().gameBoardReducer.gameBoard
-
         const positionPlayers = gameBoard.filter((i) => i.positionIn.length)
-         console.log(positionPlayers)
         let playerOne = positionPlayers.find((i) => i.positionIn.includes(1))?.id
-        const playerTwo = positionPlayers.find((i) => i.positionIn.includes(2))?.id
-        console.log(playerOne)
-        // console.log(value)
+        let playerTwo = positionPlayers.find((i) => i.positionIn.includes(2))?.id
 
-        const newGameBoard = gameBoard.reduce(function (acc, item ,x) {
 
-            const itemCopy ={...item}
-            if(itemCopy.id === playerOne || itemCopy.id === 39 ) {
-                console.log(playerOne)
-                acc[itemCopy.id] = {...itemCopy, positionIn: []}
+        const newGameBoard = gameBoard.map((item) => {
+            if(item.id === playerOne &&  playerTurn ===1 ) {
+                let position = item.positionIn.filter(i => i !== 1 )
+                return {...item, positionIn: position}
+            }  else if(item.id === playerTwo &&  playerTurn === 2 ) {
+                let position = item.positionIn.filter(i => i !== 2 )
+                return {...item, positionIn: position}
             }
-            else if(itemCopy.id === playerOne + value) {
-                    acc[itemCopy.id] = {...itemCopy, positionIn: [1]}
+              else {
+                return item
             }
-            else {
-                if(playerOne + value > 39) {
-                    // acc[itemCopy.id] = {...itemCopy, positionIn: ['xxxxxxxxxxx']}
-                    playerOne = playerOne + value - 39 -value - 1
+        })
+
+        const newGameBoardMoved = newGameBoard.map((item) => {
+            if(playerTurn ===1 ) {
+                if(playerOne + value >= 40) {
+                    playerOne = playerOne - 40
                 }
-                acc[itemCopy.id] = itemCopy
+                if (item.id === playerOne + value) {
+                    let position = item.positionIn
+                    position.push(1)
+                    return {...item, positionIn: position}
+                } else {
+                    return item
+                }
             }
-            return acc
-        }, [])
-        // console.log(newGameBoard)
+            if(playerTurn === 2 ) {
+                if(playerTwo + value >= 40) {
+                    playerTwo = playerTwo - 40
+                }
+                if (item.id === playerTwo + value) {
+                    let position = item.positionIn
+                    position.push(2)
+                    return {...item, positionIn: position}
+                } else {
+                    return item
+                }
+            }
+            return item
+        })
 
-        // if(playerTurn === 1) {
-             dispatch(gameBoardActionCreators.changePosition(newGameBoard))
-        // }
-        // if(playerTurn === 2 ) {
-        //     // dispatch(gameRulesActionCreators.setWhoseTurn(1))
-        // }
-
+        // setTimeout(() => {
+        //
+        //
+        // },0)
+        dispatch(gameBoardActionCreators.changePosition(newGameBoardMoved))
     }
 }

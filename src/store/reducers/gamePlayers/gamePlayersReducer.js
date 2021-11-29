@@ -19,7 +19,7 @@ const initialState = {
             }
         },
 
-    playerTurn : 1,
+    playerTurn : 2,
     waitMove : true,
     blockPlayer: true,
     movesToUnlockPlayer: null

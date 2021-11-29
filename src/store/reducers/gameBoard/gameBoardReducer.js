@@ -2,7 +2,7 @@
 
 const initialState = {
     gameBoard : [
-        {id: 0,name:'GO', positionIn: [], styles:['go', {right:'0vw'}]},
+        {id: 0,name:'GO', positionIn: [1,2], styles:['go', {right:'0vw'}]},
         {
             id: 1,
             name: 'MEDITERRANEAN AVE.',
@@ -537,7 +537,7 @@ const initialState = {
                 placeBuyPriceIs: null,
                 isHotel: false
             },
-            positionIn: [1],
+            positionIn: [],
             styles:[
                 'highHomeR',
                 {top:'37.27vw'}
